@@ -1,0 +1,231 @@
+/* GENERAL STYLES */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #00FFFF;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #000000;
+    border-bottom: 2px solid #00FFFF;
+}
+
+.logo {
+    font-size: 28px;
+    color: #00FFFF;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #00FFFF;
+    font-size: 18px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #00FFFF;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-links a.active {
+    color: #00FFFF;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+/* HOME PAGE */
+.midtext {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.midtext h1 {
+    font-size: 3em;
+    font-weight: 1000;
+    color: #00FFFF;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.midtext h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #00FFFF;
+}
+
+.para {
+    width: 50%;
+    max-width: 700px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+}
+
+.cta-button {
+    padding: 12px 30px;
+    background-color: #00FFFF;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* DASHBOARD */
+.dash {
+    display: flex;
+    background-color: #000000;
+    min-height: calc(100vh - 70px);
+}
+
+#dashfirst {
+    width: 200px;
+    background-color: #000000;
+    padding: 20px;
+    border-right: 2px solid #00FFFF;
+}
+
+#dashsecond {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.dashlinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashlinks li {
+    color: #00FFFF;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid #00FFFF;
+}
+
+.dashlinks li.active {
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.searchBar input {
+    padding: 10px 15px;
+    border: 1px solid #00FFFF;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #000000;
+    color: #00FFFF;
+    font-size: 16px;
+}
+
+/* DASHBOARD COMPONENTS */
+.dashboard, .weather-container {
+    background: #000000;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px solid #00FFFF;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.input-container label {
+    font-size: 16px;
+}
+
+.input-container input {
+    padding: 10px 15px;
+    border: 1px solid #00FFFF;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #00FFFF;
+}
+
+.input-container button, 
+.weather-container button {
+    padding: 10px 20px;
+    background: #00FFFF;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.input-container button:hover,
+.weather-container button:hover {
+    background: #008ba3;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* CHARTS */
+canvas {
+    background-color: #000000 !important;
+    border: 1px solid #00FFFF;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    margin-top: 20px;
+}
+
+/* NOTIFICATION */
+#notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00FFFF;
+    color: #000000;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: none;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}

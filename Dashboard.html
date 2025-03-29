@@ -1,51 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aligned Dashboard UI</title>
-    <link rel="stylesheet" href="Dashboard.css">
-<link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css"/>
-
-
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.19.0/maps/maps.css" rel="stylesheet">
 </head>
-<body class="bodydash">
-    <div class="sidebar">
-        <div class="logo"> LOGO</div>
-        <ul>
-            <li>Dashboard</li>
-            <li>Reports</li>
-            <li>Analytics</li>
-            <li>Settings</li>
+<body>
+    <nav class="navbar">
+        <div class="logo">Smarties</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="hover-underline-animation">Home</a></li>
+            <li><a href="dashboard.html" class="hover-underline-animation active">Dashboard</a></li>
+            <li><a href="#about" class="hover-underline-animation">About</a></li>
+            <li><a href="#profile" class="hover-underline-animation">Profile</a></li>
         </ul>
-    </div>
-
-    <div class="main-content">
-        <h1>Dashboard Overview</h1>
-        <div class="dashboard">
-            <div class="card">
-                <h3>Metric 1</h3>
-                <p>Value 1</p>
+    </nav>
+    
+    <div class="dash">
+        <div class="dashbaby" id="dashfirst">
+            <ul class="dashlinks">
+                <li class="active">Dashboard</li>
+                <li>Alert</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+        <div class="dashbaby" id="dashsecond">
+            <div class="searchBar"><input type="text" placeholder="Search"></div>
+            <div id="map" style="width: 100%; height: 500px;"></div>
+            <div class="dashboard">
+                <h1>🌍 Air Quality Index Checker</h1>
+                <div class="input-container">
+                    <label for="cityInput">Enter City Name:</label>
+                    <input type="text" id="cityInput" placeholder="E.g., Mumbai">
+                    <button onclick="getAQI(document.getElementById('cityInput').value)">Check AQI</button>
+                </div>
+                <div id="result" style="display: none;">
+                    <h3>Results</h3>
+                    <p id="cityName"></p>
+                    <div id="aqiInfo"></div>
+                    <div id="pollutants"></div>
+                    <canvas id="pollutantsChart"></canvas>
+                </div>
+                <p id="errorMessage"></p>
             </div>
-            <div class="card">
-                <h3>Metric 2</h3>
-                <p>Value 2</p>
+            <div class="weather-container">
+                <h1>Weather Dashboard</h1>
+                <input type="text" id="city" placeholder="Enter city name">
+                <button onclick="getWeatherAndPlotChart()">Get Weather</button>
+                <div id="weather-info"></div>
+                <canvas id="weatherChart"></canvas>
             </div>
-            <div class="card">
-                <h3>Metric 3</h3>
-                <p>Value 3</p>
-            </div>
-            <div class="card">
-                <h3>Metric 4</h3>
-                <p>Value 4</p>
-            </div>
-
-
-<div id="map">Map:
-            </div>
+            <div id="notification"></div>
         </div>
     </div>
-<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
-<script src="Dashboard.js"></script>
+
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.19.0/maps/maps-web.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="home.js"></script>
 </body>
 </html>
